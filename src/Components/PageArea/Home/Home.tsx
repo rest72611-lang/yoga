@@ -1,65 +1,73 @@
-import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
+import { DeveloperBadge } from "../../DeveloperBadge/DeveloperBadge";
 
 export function Home() {
-  const nav = useNavigate();
-
-  const lines = useMemo(
-    () => [
-      "נשימה שקטה יוצרת יום חדש.",
-      "תנועה נכונה מחזקת את הגוף והנפש.",
-      "רוגע הוא מיומנות שאפשר לפתח.",
-      "דיוק קטן – שינוי גדול.",
-      "יוגה שמחזירה אותך לעצמך."
-    ],
-    []
-  );
-
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setIndex((prev) => (prev + 1) % lines.length);
-    }, 3500);
-    return () => clearInterval(id);
-  }, [lines.length]);
+  const navigate = useNavigate();
 
   return (
-    <div className="home3">
-
-      <aside className="left-panel">
-        <button className="go-btn" onClick={() => nav("/contact")}>
+    <div className="home">
+      <aside className="home-left">
+        <button className="go-btn" onClick={() => navigate("/contact")}>
           GO
         </button>
       </aside>
 
-      <main className="main-content">
-        <div className="background-animation"></div>
+      <main className="home-main">
+        <section className="hero">
+          <h1 className="hero-title">אסתר שטינברג</h1>
 
-        <div className="hero-content">
-          <h1 className="title animated-name">
-  אסתר שטינברג
-</h1>
-
-          <p className="subtitle">
-            שיעורי יוגה שמחזירים שקט, יציבות ואנרגיה.
+          <p className="hero-subtitle">
+            יוגה שמחזירה לך שקט פנימי, יציבות וחיבור אמיתי לגוף.
           </p>
 
-          <div className="quote-box">
-            <div key={index} className="quote">
-              {lines[index]}
-            </div>
+          <p className="hero-description">
+            לא עוד אימון שעובר.
+            <br />
+            לא עוד מתיחה חטופה.
+            <br />
+            אלא תרגול עמוק, מדויק ומודע – שמלווה אותך גם הרבה אחרי שהשיעור מסתיים.
+          </p>
+
+          <button className="primary-btn" onClick={() => navigate("/contact")}>
+            לקביעת שיעור ראשון
+          </button>
+        </section>
+
+        <section className="values">
+          <div className="value-card">
+            <h3>דיוק שמורגש בכל תנועה</h3>
+            <p>הדרכה ברורה, מקצועית וקשובה לגוף שלך — ללא לחץ וללא השוואות.</p>
           </div>
 
-          <button className="cta-btn" onClick={() => nav("/contact")}>
-            התחילי עכשיו
+          <div className="value-card">
+            <h3>התקדמות בקצב שלך</h3>
+            <p>כל אחת מתחילה מהמקום שבו היא נמצאת. הגוף לומד בהדרגה, בביטחון.</p>
+          </div>
+
+          <div className="value-card">
+            <h3>רוגע שנשאר איתך</h3>
+            <p>נשימה נכונה ויציבה נכונה משנות לא רק את השיעור — אלא את היום כולו.</p>
+          </div>
+        </section>
+
+        <section className="closing">
+          <h2>מוכנה להרגיש אחרת?</h2>
+          <p>השאירי פרטים, ואסתר תחזור אלייך לשיחה אישית והתאמת תרגול.</p>
+
+          <button className="secondary-btn" onClick={() => navigate("/contact")}>
+            מעבר ליצירת קשר
           </button>
-        </div>
+        </section>
+
+        {/* ✅ כאן זה חייב להיות כדי שיופיע */}
+        <DeveloperBadge />
       </main>
     </div>
   );
 }
+
+
 
 
 

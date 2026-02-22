@@ -1,0 +1,52 @@
+.dev-badge {
+  margin-top: 120px;
+  padding: 60px 40px;
+  background: linear-gradient(180deg, #0f141d, #0b1017);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.dev-content {
+  max-width: 600px;
+}
+
+.dev-title {
+  font-size: 14px;
+  opacity: 0.6;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.dev-name {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #ffffff, #9db3ff);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.dev-desc {
+  opacity: 0.75;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.dev-link {
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.dev-link:hover {
+  background: rgba(255,255,255,0.1);
+}
