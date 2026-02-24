@@ -122,6 +122,44 @@
     transform: translateY(0);
   }
 }
+@media (max-width: 768px) {
+  .home {
+    grid-template-columns: 1fr;
+  }
+
+  .home-left {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 15px 0;
+  }
+
+  .home-main {
+    padding: 40px 20px;
+  }
+
+  .values {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .go-btn {
+    width: 55px;
+    height: 55px;
+  }
+}
 
 
 
