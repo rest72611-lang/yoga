@@ -7,10 +7,13 @@
   display: flex;
   justify-content: center;
   text-align: center;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 /* מגביל את רוחב תוכן הקרדיט כדי לשמור על קריאות. */
 .dev-content {
+  min-width: 0;
   max-width: 600px;
 }
 
@@ -41,10 +44,14 @@
   opacity: 0.75;
   line-height: 1.6;
   margin-bottom: 20px;
+  overflow-wrap: anywhere;
 }
 
 /* קישור לתיק עבודות או פרופיל חיצוני. */
 .dev-link {
+  display: inline-flex;
+  justify-content: center;
+  max-width: 100%;
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 14px;
@@ -56,4 +63,25 @@
 /* מצב ריחוף לקישור הקרדיט. */
 .dev-link:hover {
   background: rgba(255,255,255,0.1);
+}
+
+@media (max-width: 768px) {
+  .dev-badge {
+    margin-top: 72px;
+    padding: 42px 20px;
+  }
+
+  .dev-name {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dev-badge {
+    padding: 34px 14px;
+  }
+
+  .dev-name {
+    font-size: 22px;
+  }
 }
