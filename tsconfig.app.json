@@ -8,7 +8,7 @@
     "types": ["vite/client"],
     "skipLibCheck": true,
 
-    /* Bundler mode */
+    /* מצב bundler: התאמה לדרך שבה Vite מטפל בייבוא וקבצים. */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": false,
@@ -16,7 +16,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
-    /* Linting */
+    /* בדיקות TypeScript מחמירות לשמירה על איכות הקוד. */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,

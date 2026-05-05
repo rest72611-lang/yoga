@@ -1,5 +1,7 @@
 {
+  // קובץ TypeScript ראשי שמפנה לקונפיגורציות המשנה.
   "files": [],
+  // הפרדה בין הגדרות האפליקציה להגדרות כלי הבנייה.
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }

@@ -1,73 +1,38 @@
-# React + TypeScript + Vite
+# אתר יוגה לאסתר שטינברג
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+פרויקט React + TypeScript + Vite עבור אתר תדמית בעברית, בכיווניות מימין לשמאל, לשיעורי יוגה לנשים בפתח תקווה.
 
-Currently, two official plugins are available:
+## מבנה הפרויקט
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- `src/main.tsx` - נקודת הכניסה של React וחיבור הניתוב.
+- `src/content/yogaContent.ts` - מקור התוכן המרכזי של האתר: פרטי עסק, טקסטים, המלצות ושאלות נפוצות.
+- `src/Components/PageArea/Home` - עמוד הבית הראשי.
+- `src/Components/PageArea/List` - עמוד יצירת קשר.
+- `src/Components/LayoutArea/Routing` - הגדרת נתיבי האתר.
+- `public/sitemap.xml` ו־`public/robots.txt` - קבצים עבור מנועי חיפוש.
 
-## React Compiler
+## פקודות שימושיות
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+מריץ את האתר בסביבת פיתוח.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+בונה גרסת production לתיקיית `dist`.
+
+```bash
+npm run preview
+```
+
+מציג תצוגה מקדימה לגרסת הבילד.
+
+## הערות תחזוקה
+
+הטקסטים באתר מרוכזים בקובץ `src/content/yogaContent.ts`, ולכן עדיף לעדכן שם פרטי התקשרות ותוכן שיווקי במקום לפזר אותם בין קומפוננטות.
+
+האתר מוגדר לעברית ול־RTL כבר ב־`index.html`, ובקומפוננטות המרכזיות נוסף `dir="rtl"` כדי לשמור על כיווניות נכונה גם בתוך העמודים.

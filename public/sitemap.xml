@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- מפת האתר הראשית עבור מנועי חיפוש. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- רשומת עמוד אחת באתר. -->
+  <url>
+    <!-- כתובת עמוד הבית של האתר. -->
+    <loc>https://ester-yoga.co.il/</loc>
+    <!-- תדירות משוערת שבה תוכן העמוד מתעדכן. -->
+    <changefreq>monthly</changefreq>
+    <!-- עדיפות העמוד ביחס לעמודים אחרים באתר. -->
+    <priority>1.0</priority>
+  </url>
+</urlset>
